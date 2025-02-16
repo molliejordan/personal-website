@@ -3,8 +3,8 @@ import GitHubIcon from "../assets/logos/github.svg";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-100 w-screen h-48 left-0 bottom-0">
-      <div className="flex justify-between items-start pt-6 pl-6 font-jetbrains">
+    <footer className="bg-gray-100 w-full h-48">
+      <div className="w-full flex justify-between items-start pt-6 pl-6 font-jetbrains">
         <div className="flex flex-col items-start">
           <span className="font-bold">Mollie Jordan</span>
           <span>mcjordan@ncsu.edu</span>
@@ -28,7 +28,7 @@ const Footer = () => {
         </div>
         <div className="flex flex-col">
           <p className="font-jetbrains text-right pr-8">
-            Last Updated: February 13, 2025
+            Last Updated: February 15, 2025
           </p>
           <p className="font-jetbrains text-xs pr-8">
             This project was made using React with Tailwind CSS.

@@ -7,7 +7,7 @@ const Research = () => {
       <TopAppBar />
       <div className="flex flex-col pb-10">
         <p className="pt-36">
-          This page isn't done yet, but in the meantime, check out my research
+          This page is in progress, but in the meantime, check out my research
           publications below!
         </p>
 

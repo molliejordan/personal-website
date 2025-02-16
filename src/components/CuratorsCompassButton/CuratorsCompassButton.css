@@ -1,0 +1,11 @@
+@keyframes rotateLogos {
+    0% {
+      transform: translateX(100%); /* Start at the leftmost */
+    }
+    50% {
+      transform: translateX(0); /* Move to the right */
+    }
+    100% {
+      transform: translateX(-100%); /* Move all the way to the left */
+    }
+  }

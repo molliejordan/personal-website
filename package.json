@@ -12,6 +12,9 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/material": "^6.4.4",
     "@react-pdf/renderer": "^4.2.1",
     "framer-motion": "^12.4.2",
     "react": "^19.0.0",

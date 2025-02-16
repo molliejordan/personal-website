@@ -49,19 +49,19 @@ const TopAppBar = () => {
           PROJECTS
         </button>
         <button
-          className="bg-white text-black rounded-full border-2 border-black top-0 hover:bg-rose-600 hover:text-white hover:border-white"
+          className="bg-white text-black rounded-full border-2 border-black top-0 hover:bg-rose-600 hover:text-white hover:border-rose-600"
           onClick={() => handleClick("/research")}
         >
           RESEARCH
         </button>
         <button
-          className="bg-white text-black rounded-full border-2 border-black top-0 hover:bg-emerald-600 hover:text-white hover:border-white"
+          className="bg-white text-black rounded-full border-2 border-black top-0 hover:bg-emerald-600 hover:text-white hover:border-emerald-600"
           onClick={() => handleClick("/interests")}
         >
           INTERESTS
         </button>
         <button
-          className="bg-white text-black rounded-full border-2 border-black top-0 hover:bg-blue-600 hover:text-white hover:border-white"
+          className="bg-white text-black rounded-full border-2 border-black top-0 hover:bg-blue-600 hover:text-white hover:border-blue-600"
           onClick={() => handleClick("/resume")}
         >
           RESUME
