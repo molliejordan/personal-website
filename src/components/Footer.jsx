@@ -28,7 +28,7 @@ const Footer = () => {
         </div>
         <div className="flex flex-col">
           <p className="font-jetbrains text-right pr-8">
-            Last Updated: February 15, 2025
+            Last Updated: March 1, 2025
           </p>
           <p className="font-jetbrains text-xs pr-8">
             This project was made using React with Tailwind CSS.
