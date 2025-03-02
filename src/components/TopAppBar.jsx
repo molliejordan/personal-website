@@ -27,7 +27,7 @@ const TopAppBar = () => {
   return (
     <header
       id="header"
-      className="font-jetbrains transition-shadow bg-white text-black p-4 flex justify-between items-start w-full fixed top-0 left-0"
+      className="font-jetbrains transition-shadow bg-white text-black p-4 flex justify-between items-start w-full fixed top-0 left-0 z-50"
     >
       <div onClick={() => handleClick("/")}>
         <h1 className="flex pl-4 pt-4 pb-4 text-lg">
