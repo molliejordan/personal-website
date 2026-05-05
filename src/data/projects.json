@@ -1,0 +1,16 @@
+[
+    {
+        "imageSrc": "/personal-website/curators-compass-background.png",
+        "title": "Curator's Compass",
+        "date": "January 2025",
+        "description": "Currently working on a data product catalog and data asset suggestion algorithm to enhance data discoverability and governance.",
+        "path": "/projects/curators-compass"
+    },
+    {
+        "imageSrc": "/personal-website/coming-soon-gradient.png",
+        "title": "OpenAPI Generator: Coming soon!",
+        "date": null,
+        "description": null,
+        "path": null
+    }
+]
