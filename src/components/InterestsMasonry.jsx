@@ -1,94 +1,16 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import Masonry from "@mui/lab/Masonry";
-import { Card, CardMedia, CardContent, Typography, Box } from "@mui/material";
-import CommunityServicePic from "../assets/images/community_service.jpeg";
-import LeadershipPic from "../assets/images/leadership_backpacking.jpeg";
-import SustainabilityPic from "../assets/images/sustainable_cities_seattle.jpeg";
-import WomenMinoritiesTechPic from "../assets/images/women_in_tech.jpg";
-import GlobalPerspectivePic from "../assets/images/global_perspective.jpg";
-import InterdisciplinaryPic from "../assets/images/interdisciplinary_cs.png";
-import SpanishFlagPic from "../assets/images/spanish-flag.jpg";
-import FunPic from "../assets/images/fun.jpg";
-import EnvironmentPic from "../assets/images/environmental_conservation.jpg";
+import { Card, CardMedia, CardContent, Box } from "@mui/material";
 import EastIcon from "@mui/icons-material/East";
+import interests from "../data/interests.json";
 
-const images = [
-  {
-    id: 1,
-    title: "Leadership",
-    src: LeadershipPic,
-    keywords: "founder | vice president | social media manager | trip leader",
-    description:
-      "I am a founding executive board member for Backpacking Club at NC State. I created our club's logo and branding, served as Vice President, and have led multiple weekend trips!",
-    link: "https://www.instagram.com/ncstatebackpackingclub/",
-  },
-  {
-    id: 2,
-    title: "Women and Minorities in Tech",
-    src: WomenMinoritiesTechPic,
-    description:
-      "I am a strong supporter of diversity in technology and am a part of both Women in Computer Science and the NC State Women and Minority Engineering Program.",
-    link: "https://engr.ncsu.edu/wmep/",
-  },
-  {
-    id: 3,
-    title: "Sustainable Cities and Infrastructure",
-    src: SustainabilityPic,
-    keywords: "affordable housing | transportation | eco-engineering | social justice",
-    description: "In 2023 I spent my spring break in Seattle, WA, with the University Honors Program studying sustainable transportation, urban design, and social justice issues affecting communities in the Seattle area.",
-    link: "https://sites.google.com/ncsu.edu/uhpdoesseattle2023/home",
-  },
-  {
-    id: 4,
-    title: "Community Service",
-    src: CommunityServicePic,
-    keywords: "volunteer | leadership | friendship | service",
-    description: "I am a brother of the Iota Lambda chapter of Alpha Phi Omega, a national co-ed service fraternity. As a brother, I complete 25 service hours per semester and participate in fellowship events to build community in our chapter.",
-    link: "https://www.ncsuapo.org/",
-  },
-  {
-    id: 5,
-    title: "Global Perspective",
-    src: GlobalPerspectivePic,
-    keywords:
-      "study abroad | cultural exchange | international education | global learning",
-    description: "During the Spring 2024 semester I studied abroad in Madrid, Spain at Universidad Pontificia Comillas. This experience broadened my global perspective and deepened my passion for exploring cultures worldwide.",
-    link: "https://www.comillas.edu/en/icai/",
-  },
-  {
-    id: 6,
-    title: "Computer Graphics",
-    src: InterdisciplinaryPic,
-    keywords: "webgl | game design",
-    description: "I'm passionate about exploring different areas of computer science and challenged myself by taking a graphics course, where I developed a deeper appreciation for game design and interactive visuals.",
-  },
-  {
-    id: 9,
-    title: "Fun!",
-    src: FunPic,
-    keywords: "school spirit | community",
-    description: "I love being part of the NC State community, and one of my favorite ways to engage is by attending sporting events. Cheering on the Wolfpack alongside fellow students has been an unforgettable part of my experience. In fact, I made it to all but two home football games during my four years at NC State!",
-  },
-  {
-    id: 7,
-    title: "Environmental Conservation",
-    src: EnvironmentPic,
-    keywords: "national outdoor leadership school | stewardship",
-    description: "As an outdoor enthusiast, I’m passionate about preserving wilderness areas and protecting wildlife for future generations to enjoy.",
-  },
-  {
-    id: 8,
-    title: "Learning Languages",
-    src: SpanishFlagPic,
-    keywords: "spanish | language immersion",
-    description: "I am energized by learning new languages and just finished my minor in Spanish at NC State. ¡Espero seguir aprendiendo y practicando después de graduarme!"
-
-  },
-  
-  
-  
-];
+const imageModules = import.meta.glob("../assets/images/*.{jpeg,jpg,png}", { eager: true });
+const imageMap = Object.fromEntries(
+  Object.entries(imageModules).map(([path, module]) => {
+    const fileName = path.split("/").pop();
+    return [fileName, module.default];
+  })
+);
 
 const InterestsMasonry = () => {
   const [hoveredId, setHoveredId] = useState(null);
@@ -105,7 +27,7 @@ const InterestsMasonry = () => {
       }}
     >
       <Masonry columns={{ xs: 1, sm: 2, md: 3 }} spacing={4}>
-        {images.map((item) => (
+        {interests.map((item) => (
           <Card
             key={item.id}
             sx={{
@@ -122,7 +44,7 @@ const InterestsMasonry = () => {
               {/* Image */}
               <CardMedia
                 component="img"
-                image={item.src}
+                image={imageMap[item.src]}
                 alt={item.title}
                 sx={{
                   width: "100%",
